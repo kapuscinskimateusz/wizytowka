@@ -1,26 +1,21 @@
-const buttonUp = document.querySelector("button.up");
+const navSlide = () => {
+  const burger = document.querySelector(".burger");
+  const navList = document.querySelector(".nav-list");
+  const navListItems = document.querySelectorAll(".nav-list li");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= window.innerHeight) buttonUp.classList.add("active");
-  else buttonUp.classList.remove("active");
-});
+  burger.addEventListener("click", () => {
+    navList.classList.toggle("nav-active");
 
-buttonUp.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+    navListItems.forEach((item, index) => {
+      if (item.style.animation) {
+        item.style.animation = "";
+      } else {
+        item.style.animation = `navListItemFade 0.3s ease forwards ${index / 6 + 0.3}s`;
+      }
+    });
+
+    burger.classList.toggle("toggle");
   });
-});
+};
 
-// section.about
-
-const header = document.querySelector("header");
-const sectionAboutImg = document.querySelector("section.about div:first-child");
-const sectionAboutText = document.querySelector("section.about div:last-child");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= header.clientHeight / 2) {
-    sectionAboutImg.style.transform = "translateX(0)";
-    sectionAboutText.style.transform = "translateX(0)";
-  }
-});
+navSlide();

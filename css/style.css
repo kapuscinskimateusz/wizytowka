@@ -1,289 +1,180 @@
+:root {
+  --navBackgroundColor: cadetblue;
+  --navColor: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Roboto", sans-serif;
-  font-size: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-  height: 300vh;
+  min-height: 200vh;
 }
 
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
+html {
+  font-family: sans-serif;
 }
 
-header {
-  position: relative;
-  height: 100vh;
-  background-color: #222831;
-  pointer-events: none;
-}
-
-header > * {
-  position: absolute;
-}
-
-header div.welcome {
-  top: 10%;
-  left: 5%;
-  right: 5%;
-  text-transform: uppercase;
-  text-align: center;
-  color: #fff;
-}
-
-header div.welcome p {
-  font-size: 3.2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-header div.welcome h1,
-header div.welcome h2 {
-  font-size: 1.6rem;
-}
-
-header div.welcome button {
-  position: relative;
-  margin-top: 40px;
-  padding: 15px 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  cursor: pointer;
-  overflow: hidden;
-  transition: color 0.3s 0.2s;
-  z-index: 1;
-  pointer-events: auto;
-}
-
-header div.welcome button::before {
-  content: "";
-  position: absolute;
-  bottom: -100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20%;
-  height: 100%;
-  background-color: #a8dadc;
-  transition: bottom 0.2s, width 0.3s 0.3s;
-  z-index: -1;
-}
-
-header div.welcome button:hover {
-  color: #000;
-}
-
-header div.welcome button:hover::before {
-  bottom: 0;
-  width: 100%;
-}
-
-header img {
-  height: 45%;
-  bottom: 0;
-  right: 0;
-}
-
-@media (orientation: portrait) and (min-width: 360px) {
-  header div.welcome p {
-    font-size: 3.6rem;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 1.8rem;
-  }
-
-  header div.welcome button {
-    padding: 15px 20px;
-    font-size: 1.4rem;
-  }
-
-  header img {
-    height: 50%;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 410px) {
-  header div.welcome p {
-    font-size: 4rem;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 2rem;
-  }
-
-  header div.welcome button {
-    padding: 20px;
-    font-size: 1.6rem;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 768px) {
-  header div.welcome p {
-    font-size: 7.2rem;
-    margin-bottom: 40px;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 3.6rem;
-  }
-
-  header div.welcome button {
-    margin-top: 60px;
-    padding: 30px;
-    font-size: 3.2rem;
-  }
-
-  header img {
-    height: 45%;
-  }
-}
-
-@media (orientation: portrait) and (min-width: 1024px) {
-  header div.welcome p {
-    font-size: 10rem;
-    margin-bottom: 60px;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 5rem;
-  }
-
-  header div.welcome button {
-    margin-top: 100px;
-    padding: 40px 60px;
-    font-size: 4rem;
-  }
-}
-
-@media (orientation: landscape) {
-  header div.welcome {
-    top: 15%;
-    left: 10%;
-    right: auto;
-    text-align: left;
-  }
-
-  header div.welcome p {
-    font-size: 4rem;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 2rem;
-  }
-
-  header div.welcome button {
-    font-size: 1.2rem;
-  }
-
-  header img {
-    height: 90%;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 640px) {
-  header div.welcome p {
-    font-size: 4.8rem;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 2.4rem;
-  }
-
-  header div.welcome button {
-    font-size: 1.4rem;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 768px) {
-  header div.welcome {
-    left: 15%;
-  }
-}
-
-@media (orientation: landscape) and (min-width: 1024px) {
-  header div.welcome p {
-    font-size: 7.8rem;
-    margin-bottom: 40px;
-  }
-
-  header div.welcome h1,
-  header div.welcome h2 {
-    font-size: 3.4rem;
-  }
-
-  header div.welcome button {
-    margin-top: 80px;
-    padding: 25px 35px;
-    font-size: 2rem;
-  }
-}
-
-/* SECTION ABOUT */
-
-section.about {
-  display: flex;
-  height: 100vh;
-  background-color: #393e46;
-}
-
-section.about div:first-child {
-  flex-basis: 40%;
-  background-color: yellow;
-  transform: translateX(-100%);
-  transition: 1s;
-}
-
-section.about div:last-child {
-  flex-grow: 1;
-  background-color: green;
-  transform: translateX(100%);
-  transition: 1s;
-}
-
-/* BUTTON UP */
-
-button.up {
-  display: none;
+nav {
   position: fixed;
-  bottom: 60px;
-  right: 60px;
-  width: 60px;
-  height: 60px;
-  font-size: 40px;
-  border: none;
-  border-radius: 50%;
-  background-color: #222831;
-  color: #fff;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--navBackgroundColor);
+}
+
+nav div.logo {
+  text-transform: uppercase;
+  color: var(--navColor);
+}
+
+nav ul.nav-list {
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  width: 60%;
+  height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  background-color: var(--navBackgroundColor);
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-button.up.active {
-  opacity: 1;
-  pointer-events: auto;
+nav ul.nav-list.nav-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
-@media (orientation: landscape) and (min-width: 1024px) {
-  button.up {
-    display: block;
+nav ul.nav-list li {
+  opacity: 0;
+  overflow: hidden;
+}
+
+nav ul.nav-list li a {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--navColor);
+}
+
+nav ul.nav-list li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  width: 100%;
+  height: 2px;
+  background-color: var(--navColor);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul.nav-list li a:hover::before {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  nav ul.nav-list {
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    width: 40%;
+    height: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  nav ul.nav-list li {
+    opacity: 1;
   }
 }
+
+nav div.burger {
+  cursor: pointer;
+}
+
+nav div.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: var(--navColor);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@-webkit-keyframes navListItemFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes navListItemFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+nav div.burger.toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+nav div.burger.toggle .line2 {
+  opacity: 0;
+}
+
+nav div.burger.toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+          transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (min-width: 1024px) {
+  nav div.burger {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
