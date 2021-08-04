@@ -140,17 +140,50 @@ nav {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow: hidden;
     .hello {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 40px;
       text-transform: uppercase;
-      background-color: rgba(203, 153, 126, 0.8);
+      text-align: center;
       padding: 20px;
       border-radius: 20px;
+      background-color: #cb997e;
       color: #fff;
+      @media (min-width: 1024px) {
+        font-size: 30px;
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 40px;
+      width: 40px;
+      line-height: 40px;
+      border: none;
+      background-color: transparent;
+      color: #cb997e;
+      font-size: 40px;
+      cursor: pointer;
+      animation: scrollShow 0.3s linear;
+      @keyframes scrollShow {
+        from {
+          transform: translate(-50%, 100%);
+        }
+        to {
+          transform: translate(-50%, 0);
+        }
+      }
+      @media (min-width: 1024px) {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 50px;
+      }
     }
   }
 }

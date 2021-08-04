@@ -200,6 +200,7 @@ nav div.burger.toggle .line3 {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .container header .hello {
@@ -208,11 +209,66 @@ nav div.burger.toggle .line3 {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 40px;
   text-transform: uppercase;
-  background-color: rgba(203, 153, 126, 0.8);
+  text-align: center;
   padding: 20px;
   border-radius: 20px;
+  background-color: #cb997e;
   color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .container header .hello {
+    font-size: 30px;
+  }
+}
+
+.container header button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border: none;
+  background-color: transparent;
+  color: #cb997e;
+  font-size: 40px;
+  cursor: pointer;
+  -webkit-animation: scrollShow 0.3s linear;
+          animation: scrollShow 0.3s linear;
+}
+
+@-webkit-keyframes scrollShow {
+  from {
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@keyframes scrollShow {
+  from {
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+  }
+  to {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container header button {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

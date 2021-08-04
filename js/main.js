@@ -18,4 +18,18 @@ const navSlide = () => {
   });
 };
 
+const scrollDown = () => {
+  const btn = document.querySelector("header button");
+  const navHeight = document.querySelector("nav").clientHeight;
+  const headerHeight = document.querySelector("header").clientHeight;
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({
+      top: navHeight + headerHeight,
+      behavior: "smooth",
+    });
+  });
+};
+
 navSlide();
+scrollDown();
