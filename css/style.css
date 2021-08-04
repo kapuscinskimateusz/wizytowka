@@ -1,5 +1,5 @@
 :root {
-  --navBackgroundColor: cadetblue;
+  --navBackgroundColor: #061e52;
   --navColor: #fff;
 }
 
@@ -33,10 +33,12 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   background-color: var(--navBackgroundColor);
+  z-index: 1;
 }
 
-nav div.logo {
+nav div.logo a {
   text-transform: uppercase;
+  text-decoration: none;
   color: var(--navColor);
 }
 
@@ -61,7 +63,9 @@ nav ul.nav-list {
       -ms-flex-align: center;
           align-items: center;
   list-style-type: none;
-  background-color: var(--navBackgroundColor);
+  background-image: url(../img/navList.jpg);
+  background-size: cover;
+  background-position: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -80,7 +84,7 @@ nav ul.nav-list li a {
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--navColor);
+  color: #061e52;
 }
 
 nav ul.nav-list li a::before {
@@ -107,15 +111,19 @@ nav ul.nav-list li a:hover::before {
     position: static;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    width: 40%;
+    width: 30%;
     height: auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    background-image: none;
   }
   nav ul.nav-list li {
     opacity: 1;
+  }
+  nav ul.nav-list li a {
+    color: #fff;
   }
 }
 
@@ -176,5 +184,34 @@ nav div.burger.toggle .line3 {
   nav div.burger {
     display: none;
   }
+}
+
+.container {
+  padding-top: 8vh;
+}
+
+.container header {
+  position: relative;
+  height: 92vh;
+  background-image: url(../img/header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container header .scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: #061e52;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
