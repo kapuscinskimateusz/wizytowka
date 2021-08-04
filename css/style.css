@@ -6,6 +6,10 @@
           box-sizing: border-box;
 }
 
+body {
+  min-height: 200vh;
+}
+
 html {
   font-family: "Roboto", sans-serif;
 }
@@ -25,6 +29,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   background-color: #192841;
+  z-index: 10;
 }
 
 nav div.logo a {
@@ -189,68 +194,22 @@ nav div.burger.toggle .line3 {
 }
 
 .container header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  position: relative;
   height: 92vh;
-  padding: 40px;
   background-image: url("../img/header.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
-.container header .welcome {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-  padding: 40px;
-  color: #fff;
-}
-
-.container header .welcome p {
-  margin-bottom: 10px;
-}
-
-.container header .welcome button {
-  position: relative;
-  margin-top: 40px;
-  padding: 10px 25px;
-  border: 2px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  text-transform: uppercase;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.container header .welcome button::before {
-  content: "";
+.container header .hello {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 100%);
-          transform: translate(-50%, 100%);
-  width: 20%;
-  height: 100%;
-  background-color: #ddd;
-  -webkit-transition: width 0.3s 0.3s, -webkit-transform 0.3s;
-  transition: width 0.3s 0.3s, -webkit-transform 0.3s;
-  transition: transform 0.3s, width 0.3s 0.3s;
-  transition: transform 0.3s, width 0.3s 0.3s, -webkit-transform 0.3s;
-}
-
-.container header .welcome button:hover {
-  color: #000;
-}
-
-.container header .welcome button:hover::before {
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 40px;
+  text-transform: uppercase;
+  color: #192841;
 }
 /*# sourceMappingURL=style.css.map */

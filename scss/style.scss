@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-height: 200vh;
+}
+
 html {
   font-family: "Roboto", sans-serif;
 }
@@ -20,6 +24,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: #192841;
+  z-index: 10;
   div.logo {
     a {
       text-transform: uppercase;
@@ -129,51 +134,20 @@ nav {
 .container {
   padding-top: 8vh;
   header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    position: relative;
     height: 92vh;
-    padding: 40px;
     background-image: url("../img/header.jpg");
     background-size: cover;
     background-position: center;
-    .welcome {
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 20px;
-      padding: 40px;
-      color: #fff;
-      p {
-        margin-bottom: 10px;
-      }
-      button {
-        position: relative;
-        margin-top: 40px;
-        padding: 10px 25px;
-        border: 2px solid #fff;
-        background-color: transparent;
-        color: #fff;
-        text-transform: uppercase;
-        cursor: pointer;
-        overflow: hidden;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translate(-50%, 100%);
-          width: 20%;
-          height: 100%;
-          background-color: #ddd;
-          transition: transform 0.3s, width 0.3s 0.3s;
-        }
-        &:hover {
-          color: #000;
-        }
-        &:hover::before {
-          transform: translate(-50%, 0);
-          width: 100%;
-        }
-      }
+    background-attachment: fixed;
+    .hello {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      text-transform: uppercase;
+      color: #192841;
     }
   }
 }
