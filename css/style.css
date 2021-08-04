@@ -1,8 +1,4 @@
-:root {
-  --navBackgroundColor: #061e52;
-  --navColor: #fff;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +6,8 @@
           box-sizing: border-box;
 }
 
-body {
-  min-height: 200vh;
-}
-
 html {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
@@ -32,14 +24,14 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--navBackgroundColor);
-  z-index: 1;
+  background-color: #192841;
 }
 
 nav div.logo a {
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--navColor);
+  font-weight: bold;
+  color: #fff;
 }
 
 nav ul.nav-list {
@@ -66,6 +58,7 @@ nav ul.nav-list {
   background-image: url(../img/navList.jpg);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -84,7 +77,8 @@ nav ul.nav-list li a {
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
-  color: #061e52;
+  font-weight: bold;
+  color: #192841;
 }
 
 nav ul.nav-list li a::before {
@@ -96,7 +90,7 @@ nav ul.nav-list li a::before {
           transform: translateX(-100%);
   width: 100%;
   height: 2px;
-  background-color: var(--navColor);
+  background-color: #192841;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -111,7 +105,7 @@ nav ul.nav-list li a:hover::before {
     position: static;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    width: 30%;
+    width: 40%;
     height: auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -123,7 +117,11 @@ nav ul.nav-list li a:hover::before {
     opacity: 1;
   }
   nav ul.nav-list li a {
+    font-weight: normal;
     color: #fff;
+  }
+  nav ul.nav-list li a::before {
+    background-color: #fff;
   }
 }
 
@@ -135,7 +133,7 @@ nav div.burger div {
   width: 25px;
   height: 3px;
   margin: 5px;
-  background-color: var(--navColor);
+  background-color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -191,27 +189,68 @@ nav div.burger.toggle .line3 {
 }
 
 .container header {
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 92vh;
-  background-image: url(../img/header.jpg);
+  padding: 40px;
+  background-image: url("../img/header.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-.container header .scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-size: 40px;
-  color: #061e52;
+.container header .welcome {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+}
+
+.container header .welcome p {
+  margin-bottom: 10px;
+}
+
+.container header .welcome button {
+  position: relative;
+  margin-top: 40px;
+  padding: 10px 25px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.container header .welcome button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
+  width: 20%;
+  height: 100%;
+  background-color: #ddd;
+  -webkit-transition: width 0.3s 0.3s, -webkit-transform 0.3s;
+  transition: width 0.3s 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, width 0.3s 0.3s;
+  transition: transform 0.3s, width 0.3s 0.3s, -webkit-transform 0.3s;
+}
+
+.container header .welcome button:hover {
+  color: #000;
+}
+
+.container header .welcome button:hover::before {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
